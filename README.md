@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/mdafaassidqi-2446s-projects/v0-stack-fe](https://vercel.com/mdafaassidqi-2446s-projects/v0-stack-fe)**
+**[https://vercel.com/mdafaassidqi-2446s-projects/v0-stack-fe](https://vercel.com/mdafaassidqi-2446s-projects/v0-stack-fe)](https://dashboard-app-y0.vercel.app/)**
 
 ## Build your app
 
