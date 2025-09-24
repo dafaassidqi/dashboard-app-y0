@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard Static Preview</title>
+    <meta name="description" content="Static preview untuk live server di Chrome." />
+    <style>
+      :root{
+        /* 3-5 colors total: 1 primary, 2-3 neutrals, 1 accent */
+        --bg: #0f172a;         /* neutral - slate-900 */
+        --card: #111827;       /* neutral - gray-900 */
+        --text: #e5e7eb;       /* neutral - gray-200 */
+        --primary: #06b6d4;    /* primary - cyan-500 */
+        --accent: #f59e0b;     /* accent - amber-500 */
+        --radius: 0.75rem;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body{
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.55;
+      }
+      a{ color: var(--primary); text-decoration: none; }
+      a:hover{ text-decoration: underline; }
+      .container{
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+      .brand{
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        font-weight: 700;
+        letter-spacing: .2px;
+      }
+      .brand img{
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+      }
+      .btn{
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .625rem 1rem;
+        border-radius: var(--radius);
+        background: var(--primary);
+        color: #00222a; /* ensure contrast on cyan */
+        font-weight: 600;
+        border: 0;
+        cursor: pointer;
+      }
+      .btn.secondary{
+        background: transparent;
+        color: var(--text);
+        outline: 1px solid rgba(229, 231, 235, .12);
+      }
+      main{
+        display: grid;
+        gap: 1rem;
+      }
+      .hero{
+        background: linear-gradient(180deg, rgba(6,182,212,.08), transparent 50%), var(--card);
+        border: 1px solid rgba(229, 231, 235, .08);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+      }
+      .hero h1{
+        margin: 0 0 .5rem;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        letter-spacing: .2px;
+      }
+      .hero p{
+        margin: 0;
+        opacity: .9;
+      }
+      .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      @media (min-width: 768px){
+        .grid{ grid-template-columns: repeat(3, 1fr); }
+      }
+      .card{
+        background: var(--card);
+        border: 1px solid rgba(229, 231, 235, .08);
+        border-radius: var(--radius);
+        padding: 1rem;
+      }
+      .card h3{
+        margin: 0 0 .5rem;
+        font-size: 1rem;
+      }
+      .value{
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .muted{ opacity: .7; font-size: .875rem; }
+      footer{
+        opacity: .7;
+        text-align: center;
+        padding: 2rem 0 1rem;
+        font-size: .875rem;
+      }
+      .note{
+        margin-top: .75rem;
+        display: inline-block;
+        color: var(--accent);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container" role="banner" aria-label="Static Preview Header">
+      <div class="brand">
+        <img src="/placeholder.svg" alt="Logo" />
+        <span>Stack FE Dashboard</span>
+      </div>
+      <nav aria-label="Quick actions">
+        <a class="btn secondary" href="/index.html" aria-current="page">Static</a>
+        <a class="btn" href="/" title="Buka app Next.js">Buka Next App</a>
+      </nav>
+    </header>
+
+    <main class="container" role="main">
+      <section class="hero" aria-labelledby="title">
+        <h1 id="title">Static Preview untuk Live Server</h1>
+        <p>Halaman ini berdiri sendiri (tanpa Next.js/Tailwind). Cocok untuk dicoba dengan Live Server di Chrome.</p>
+        <p class="note">Tip: Klik “Buka Next App” untuk melihat versi Next.js di route root (/).</p>
+      </section>
+
+      <section class="grid" aria-label="Stats">
+        <article class="card" aria-labelledby="mrr">
+          <h3 id="mrr">MRR</h3>
+          <div class="value">Rp 125.000.000</div>
+          <div class="muted">+8.2% bulan ini</div>
+        </article>
+        <article class="card" aria-labelledby="users">
+          <h3 id="users">Pengguna Aktif</h3>
+          <div class="value">12.480</div>
+          <div class="muted">+320 hari ini</div>
+        </article>
+        <article class="card" aria-labelledby="churn">
+          <h3 id="churn">Churn</h3>
+          <div class="value">1.7%</div>
+          <div class="muted">-0.2% MoM</div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="container" role="contentinfo">
+      <span>© 2025 Stack FE • Static preview</span>
+    </footer>
+  </body>
+</html>
